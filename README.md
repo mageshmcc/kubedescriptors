@@ -1,7 +1,7 @@
 # KubeDescriptors
 Installing/Managing YML Descriptors/Docker-compose file on K8S Cluster
 
-KubeDescriptors is a Python(2.7) wrapper to install yml descriptors/docker-compose file on a Kubernetes Cluster using the combination of Kubernetes APIs and kubectl commands
+KubeDescriptors is a Python(2.7) wrapper, which automagically install yml descriptors/docker-compose file/s as microservices on a Kubernetes Cluster using the combination of Kubernetes APIs and kubectl commands
 
 ## Prerequisites
 
@@ -9,7 +9,8 @@ KubeDescriptors is a Python(2.7) wrapper to install yml descriptors/docker-compo
 2. kompose installed on the K8S Master
 3. pip install kubernetes(Python Client for K8S) on the K8S Master
 4. pip install bunch on the K8S Master
-5. KubeDescriptors should be cloned/present on the K8S Master
+5. pip install yaml on the K8S Master
+6. KubeDescriptors should be cloned/present on the K8S Master
 
 ## Working of KubeDescriptors
 
