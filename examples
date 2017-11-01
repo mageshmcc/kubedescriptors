@@ -1,0 +1,34 @@
+from manage_yml_descriptors import ManageYmlDescriptors
+from manage_apiserver import ManageApiServer
+
+manage_ms = ManageYmlDescriptors()
+kube_api = ManageApiServer()
+yml_dir = '/home/user/yml_file_location'
+
+# Example 1 : Installing Microservices
+pd_install = manage_ms.get_all_yml_details_and_install_microservices(yml_dir)
+print pd_install
+
+# Example 2 : Uninstalling Microservices
+pd_uninstall = manage_ms.get_all_yml_details_and_uninstall_microservices(yml_dir)
+print pd_uninstall
+
+# Example 3 : Get K8S Node/s Details
+node_dict = kube_api.get_details_of_the_node(PRETTY=True)
+print node_dict
+
+# Example 4 : Get all PODs Details for a given Namespaces
+pods = kube_api.get_all_pods_details_for_the_namespace()
+print pods
+
+# Example 5 : Create Service Descriptor Micorservices using APIs instead of "kubectl" command
+pod_create = kube_api.create_service(YML_LIST=['/home/user/yml_file_location/mysqldb-service.yaml'])
+print pod_create
+
+# Example 6 : Get all available Namespaces
+namespace_list = kube_api.get_all_available_namespaces_names()
+print namespace_list
+
+# Example 6 : Get all PODs Details from all the Namespace
+all_pods = kube_api.get_details_of_the_pod()
+print all_pods
