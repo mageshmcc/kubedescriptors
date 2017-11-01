@@ -170,7 +170,7 @@ class ManageApiServer(object):
         namespace = kwargs['NAMESPACE'] if 'NAMESPACE' in kwargs else 'default'
         for yml in yml_list:
             yml_obj = self.util.get_yaml_dict_as_object(yml)
-            namespace = yml_obj.metadata.namespace if hasattr(yml_obj.metadata, 'namespace') else yml_obj.metadata.name
+            namespace = yml_obj.metadata.namespace if hasattr(yml_obj.metadata, 'namespace') else namespace
             if namespace in self.get_all_available_namespaces_names():
                 # TODO: create_namespace = self.kube_api_client.create_namespace(body='')
                 # TODO: create_namespace if namespace is not available
